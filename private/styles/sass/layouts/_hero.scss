@@ -1,0 +1,30 @@
+@use "../abstracts"as *;
+
+.hero {
+    padding: 6rem 0;
+    overflow: hidden;
+    
+    > * {
+        position: relative;
+        font-weight: var(--fw-bold);
+        display: inline;
+        font-size: var(--fs-900);
+        margin-bottom: var(--spc-3);
+    }
+
+    .sec-text {
+    color: var(--clr-text);
+
+    &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--clr-primary);
+    border-left: 2px solid var(--clr-primary);
+    animation: animate 4s steps(12) infinite;
+}
+}
+}

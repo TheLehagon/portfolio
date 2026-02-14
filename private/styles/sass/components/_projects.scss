@@ -1,0 +1,17 @@
+.projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.project {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: .6rem;
+    transition: .3s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    background: #ffecec;
+}

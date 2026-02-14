@@ -1,0 +1,60 @@
+@use "../abstracts"as *;
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--clr-text);
+    color: var(--clr-text);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    overflow: hidden;
+    margin-top: 1rem;
+
+    &:hover {
+        background: var(--clr-text);
+        color: var(--clr-background);
+        transform: scale(1.1);
+
+        &.active .theme-icon {
+            transform: rotate(180deg);
+        }
+
+        .theme-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+    }
+}
+
+
+.dark-mode-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    background: var(--clr-background);
+    clip-path: circle(0% at var(--x, 0) var(--y, 0));
+    animation: expandDarkMode 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-mode .sidebar {
+    background: #1e293b;
+    border-right-color: #334155;
+}
+
+body.dark-mode .logo {
+    background-color: var(--text);
+}
+

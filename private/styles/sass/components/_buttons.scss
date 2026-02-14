@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.button {
+  padding: 0.75em 1.5em;
+  color: var(--clr-text);
+  text-decoration: none;
+
+  border: 1px solid var(--clr-secondary);
+  border-radius: 0.5em;
+
+  &:hover {
+    background-color: var(--clr-secondary);
+  }
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+  background-color: var(--clr-primary);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin: .5rem 0;
+}
+
+.btn:hover {
+    background: var(--clr-primaryop);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}

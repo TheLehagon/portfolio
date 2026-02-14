@@ -1,0 +1,78 @@
+@use "../abstracts"as *;
+
+.about {
+    p {
+        max-width: 600px;
+    }
+
+    .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spc-2);
+        margin: var(--spc-3) 0 var(--spc-4);
+
+        .chip {
+            border: 1px solid var(--border, #ddd);
+            background: var(--chip-bg, #f7f7f7);
+            padding: .45rem .75rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all .2s;
+
+            &[aria-pressed="true"] {
+                background: var(--accent, #3b82f6);
+                color: #fff;
+                border-color: transparent;
+            }
+
+            &--reset {
+                margin-left: auto;
+            }
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--spc-4);
+
+            .about-card {
+                border: 1px solid var(--border, #eee);
+                padding: 1rem;
+                border-radius: .5rem;
+                background: var(--card, #fff);
+                transition: transform .2s, box-shadow .2s;
+
+                &:focus-within,
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+                }
+
+            }
+        }
+    }
+}
+
+.about-quiz {
+    fieldset {
+        border: 1px solid var(--border, #e5e7eb);
+        padding: 1rem;
+        border-radius: .5rem;
+        margin: .75rem 0;
+
+        legend {
+            padding: 0 .25rem;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin: .35rem 0;
+        }
+    }
+
+    #quiz-result {
+        margin-top: .75rem;
+        font-weight: 600;
+    }
+}
