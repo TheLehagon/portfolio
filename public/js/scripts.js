@@ -107,36 +107,7 @@ function initTimeline() {
     window.addEventListener('scroll', updateProgressBar);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const chips = Array.from(document.querySelectorAll('.chip'));
-    const cards = Array.from(document.querySelectorAll('.about-card'));
-
-    const filterByTopic = (topic) => {
-        if (topic === 'reset') {
-            cards.forEach(c => c.classList.remove('hidden'));
-            return;
-        }
-        cards.forEach(c => {
-            c.classList.toggle('hidden', c.dataset.topic !== topic);
-        });
-    };
-
-    // ensure a single active chip (falls back to first chip)
-    let active = chips.find(c => c.getAttribute('aria-pressed') === 'true') || chips[0];
-    chips.forEach(c => c.setAttribute('aria-pressed', c === active ? 'true' : 'false'));
-
-    // apply initial filter based on active chip
-    filterByTopic(active.dataset.topic);
-
-    // interaction: change active chip and filter cards
-    chips.forEach(chip => {
-        chip.addEventListener('click', () => {
-            chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
-            chip.setAttribute('aria-pressed', 'true');
-            filterByTopic(chip.dataset.topic);
-        });
-    });
-});
+document.addEventListener('DOMContentLoaded', initTimeline);
 
 // === Interaktive Chips für "Über mich" ===
 (function(){
@@ -183,3 +154,105 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
+/* ---------------------------
+   INTERACTIVE PARTICLE BACKGROUND ANIMATION
+---------------------------- */
+(function() {
+  const bgContainer = document.getElementById('bg-animation');
+  if (!bgContainer) return;
+
+  const PARTICLE_COUNT = 35;
+  const particles = [];
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  class Particle {
+    constructor() {
+      this.element = document.createElement('div');
+      this.element.className = `particle type-${Math.floor(Math.random() * 3) + 1}`;
+      
+      this.size = Math.random() * 20 + 10;
+      this.element.style.width = this.size + 'px';
+      this.element.style.height = this.size + 'px';
+      
+      this.x = Math.random() * window.innerWidth;
+      this.y = Math.random() * window.innerHeight;
+      
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      
+      this.opacity = Math.random() * 0.25 + 0.1;
+      this.element.style.opacity = this.opacity;
+      
+      this.animationDuration = Math.random() * 15 + 12;
+      this.element.style.animation = `floatParticle ${this.animationDuration}s ease-in-out infinite`;
+      this.element.style.animationDelay = Math.random() * 2 + 's';
+      
+      bgContainer.appendChild(this.element);
+    }
+
+    update(mouseX, mouseY, scrollProgress) {
+      // Bewegung basierend auf Scroll
+      this.y += this.vy + (scrollProgress * 0.1);
+      
+      // Partikel folgen der Maus (Attraktion)
+      const dx = mouseX - this.x;
+      const dy = mouseY - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance < 250) {
+        const force = (250 - distance) / 250 * 0.2;
+        this.x += (dx / distance) * force;
+        this.y += (dy / distance) * force;
+      }
+      
+      // Eigenständige Bewegung
+      this.x += this.vx;
+      
+      // Wrap around screen
+      if (this.x < -20) this.x = window.innerWidth + 20;
+      if (this.x > window.innerWidth + 20) this.x = -20;
+      if (this.y < -20) this.y = window.innerHeight + 20;
+      if (this.y > window.innerHeight + 20) this.y = -20;
+      
+      // Update position
+      this.element.style.left = this.x + 'px';
+      this.element.style.top = this.y + 'px';
+      
+      // Opacity basierend auf Scrollfortschritt
+      const baseOpacity = this.opacity + (scrollProgress * 0.1);
+      this.element.style.opacity = Math.min(0.4, baseOpacity);
+    }
+  }
+
+  // Initialize particles
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push(new Particle());
+  }
+
+  // Mouse tracking
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Mouse leave
+  document.addEventListener('mouseleave', () => {
+    mouseX = window.innerWidth / 2;
+    mouseY = -100;
+  });
+
+  // Animation loop
+  function animate() {
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = windowHeight > 0 ? window.scrollY / windowHeight : 0;
+
+    particles.forEach(particle => {
+      particle.update(mouseX, mouseY, scrollProgress);
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
