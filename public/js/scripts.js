@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', initTimeline);
   const bgContainer = document.getElementById('bg-animation');
   if (!bgContainer) return;
 
-  const PARTICLE_COUNT = 35;
+  const PARTICLE_COUNT = 10;
   const particles = [];
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
