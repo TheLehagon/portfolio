@@ -1,216 +1,114 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leon Höffges – Portfolio | Test Analyst</title>
-  <meta name="description" content="Portfolio von Leon Höffges – Test Analyst. Fähigkeiten, Projekte, Tools und Kontakt.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Leon Höffges</title>
   <link rel="stylesheet" href="styles/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-- Header -->
-  <header aria-label="Kopfbereich Navigation">
-    <div class="container">
-      <nav>
-        <div class="brand" aria-label="Marke">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Leon&nbsp;Höffges</span>
-        </div>
-        <div class="navlinks" role="navigation" aria-label="Hauptnavigation">
-          <a href="#about">Über mich</a>
-          <a href="#projects">Projekte</a>
-          <a href="#contact">Kontakt</a>
-        </div>
-        <a class="cta" href="#contact">Kontakt aufnehmen</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero" aria-label="Intro">
-      <div class="hero-bg">
-        <img 
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop" 
-          srcset="
-            https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=600&fit=crop 600w,
-            https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop 1200w,
-            https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&h=1280&fit=crop 1920w
-          "
-          sizes="100vw"
-          alt="Technologie und Code - Hero Background"
-          class="hero-image"
-        />
+  <div class="wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="group">
+              <div class="logo"></div>
+      <div class="nav">
+        <a href="#hero">Home</a>
+        <a href="#about">Über mich</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Erfahrung</a>
+        <a href="#projects">Projekte</a>
       </div>
-      <div class="hero-content">
-        <div class="hero-card">
-        <h1>Typo3 Integrator & Quality Enthusiast</h1>
-        <p class="subtitle">
-          Ich baue Frontends, die nicht nur funktionieren, sondern auch Spaß machen – mit Fokus auf Qualität, Nutzererlebnis und nachhaltiger Wartbarkeit.
+      <p>Leon Höffges</p>
+      <p>📌 Geldern</p>
+      <a href="mailto:leon.hoeffges@gmail.com" class="btn">Let's Connect!</a>
+      </div>
+      <div class="gropup">
+      <h3>Find mich auch hier:</h3>
+      <a href="http://linkedin.com/in/leon-hoeffges" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
+      <a href="http://github.com/leon-hoeffges" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
+      <a href="https://www.instagram.com/thelehagon" target="_blank" rel="noopener noreferrer" class="btn">Instagram</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+      <!-- HERO -->
+      <section class="hero" id="hero">
+                  <h1 class="text first-text">Hi, ich bin Leon</h1>
+        <p class="text sec-text">Test Analyst</p>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about">
+        <h2>Über mich</h2>
+        <p>
+          Ich bin Test Analyst und TYPO3-Integrator aus NRW mit einer großen Leidenschaft für Softwarequalität,
+          effiziente Prozesse und klare Kommunikation. Ich liebe es, mich in technische
+          Systeme zu vertiefen, Fehler zu analysieren und Lösungen zu entwickeln, die
+          Nutzer:innen wirklich weiterhelfen.
         </p>
-        <div class="chips" aria-label="Schwerpunkte">
-          <span class="chip">Layouts</span>
-          <span class="chip">Useability</span>
-          <span class="chip">Nachhaltigkeit</span>
-          <span class="chip">UI‑Testing</span>
-          <span class="chip">Barrierefreiheit</span>
-        </div>
-        </div>
-        <div class="hero-card" aria-label="Kurzprofil">
-          <h2 class="section-title">Kurzprofil</h2>
-          <div class="keyvals">
-            <div class="kv-label">Rolle</div><div>Typo3-Integrator & Test Analyst</div>
-            <div class="kv-label">Fokus</div><div>Typo3-Integration, UI-Testing, Accessibility</div>
-            <div class="kv-label">Tools</div><div>Jira, Azure DevOps; PHP Storm, Copilot</div>
-            <div class="kv-label">Interessen</div><div>Testdaten-Design, Accessibility, Teststrategie</div>
-          </div>
-          <div class="chips" style="margin-top:14px">
-            <span class="chip" title="Stabil">Stabilität ✅</span>
-            <span class="chip" title="Tempo">Lieferfähigkeit 🚀</span>
-            <span class="chip" title="Nutzer">Nutzerfokus 🎯</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- About -->
-    <div class="container">
-    <section id="about" aria-label="Über mich">
-      <h2 class="section-title">Über mich</h2>
-      <div class="panel about-grid">
-        <div>
-          <p>
-            Ich bin Leon, Test Analyst mit einem pragmatischen Blick für Risiken und Edge Cases.
-            Ich kombiniere systematisches Vorgehen (Checklisten, Testfälle) mit explorativem Testen, um schnell verwertbares Feedback zu liefern.
-          </p>
-          <ul class="list">
-            <li><strong>Stärken:</strong> saubere Repro‑Steps, klare Bug‑Reports, Priorisierung nach Impact</li>
-            <li><strong>Arbeitsweise:</strong> „Test early“, kurze Feedback‑Loops, automatisierbare Regression</li>
-            <li><strong>Wert:</strong> Weniger Produktionsfehler, schnellere Releases, transparentes Qualitätsbild</li>
-          </ul>
+      <!-- SKILLS -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-list">
+          <div class="skill">Website-Testing</div>
+          <div class="skill">TYPO3 Integration</div>
+          <div class="skill">TYPO3 Editor</div>
+          <div class="skill">CSS / SASS</div>
+          <div class="skill">Jira</div>
+          <div class="skill">Scrum</div>
+          <div class="skill">Azure DevOps</div>
+          <div class="skill">Fluid-Templates</div>
         </div>
-        <div>
-          <h3 style="margin-top:0">Skills & Tools</h3>
-          <div class="chips">
-            <span class="chip">Playwright</span>
-            <span class="chip">Cypress</span>
-            <span class="chip">Postman</span>
-            <span class="chip">Jira</span>
-            <span class="chip">Azure DevOps</span>
-            <span class="chip">GitHub Actions</span>
-            <span class="chip">SQL (Basis)</span>
-            <span class="chip">Accessibility Checks</span>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="experience">
+        <h2>Berufserfahrung</h2>
+            <div class="timeline">
+        <div class="timeline-events" id="timeline-events">
+            <!-- Timeline events will be dynamically added here -->
+        </div>
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2>Aktuelle Projekte</h2>
+        <div class="projects-grid">
+          <div class="project">
+            <h3>Portfolio Erweiterung</h3>
+            <p>Entwicklung und Überarbetung meines Portfolios.</p>
+            <ul>
+              <li>Umstellung auf vue.js</li>
+              <li>sass integration</li>
+              <li>🌒 dark mode</li>
+              <li>Barrierefreiheit</li>
+            </ul>
+          </div>
+          <div class="project">
+            <h3>Pokedex/Shinydex mit Pokeapi</h3>
+            <p>Erstellen einer eigenen Pokedex-Lösung mit Pokeapi.</p>
+          </div>
+          <div class="project">
+            <h3>Vue.js startup</h3>
+            <p>Einarbeitung in Vue.js mit node & vite.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Projects -->
-    <section id="projects" aria-label="Projekte">
-      <h2 class="section-title">Ausgewählte Projekte</h2>
-      <div class="projects">
-        <!-- Projekt 1 -->
-        <article class="card" aria-label="Projekt 1: Testautomatisierung Web UI">
-          <div class="thumb">Bild/Preview</div>
-          <h3 style="margin:0">Web‑UI‑Regression mit Playwright</h3>
-          <p style="margin:0">
-            Aufbau einer stabilen UI‑Test‑Suite (ca. 120 Tests) mit <strong>Playwright</strong>, inkl. Login‑Flows,
-            kritische Pfade & Visual Regression. Ausführung in <strong>CI</strong> (GitHub Actions).
-          </p>
-          <div class="tags">
-            <span class="tag">Playwright</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">GitHub Actions</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:auto">
-            <a class="link" href="#" aria-label="Demo ansehen">Demo</a>
-            <a class="link" href="#" aria-label="Code ansehen">Code</a>
-          </div>
-        </article>
-
-        <!-- Projekt 2 -->
-        <article class="card" aria-label="Projekt 2: API Teststrategie">
-          <div class="thumb">Bild/Preview</div>
-          <h3 style="margin:0">Risikobasierte API‑Teststrategie</h3>
-          <p style="margin:0">
-            Definition einer Teststrategie mit Fokus auf <strong>kritische Endpunkte</strong>, Schema‑Validierung,
-            Fehlerpfade und Performance‑Smoke‑Tests. Automatisierte Checks mit <strong>Postman</strong>.
-          </p>
-          <div class="tags">
-            <span class="tag">Postman</span>
-            <span class="tag">Newman</span>
-            <span class="tag">OWASP ZAP (Basis)</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:auto">
-            <a class="link" href="#" aria-label="Dokumentation">Dokumentation</a>
-          </div>
-        </article>
-
-        <!-- Projekt 3 -->
-        <article class="card" aria-label="Projekt 3: Testreporting">
-          <div class="thumb">Bild/Preview</div>
-          <h3 style="margin:0">Qualitäts‑Dashboard & Metriken</h3>
-          <p style="margin:0">
-            Aufbau eines schlanken Dashboards: <em>Pass‑Rate</em>, <em>Flaky‑Rate</em>, <em>Defects by Severity</em>.
-            Transparenz für Stakeholder & Release‑Go/No‑Go.
-          </p>
-          <div class="tags">
-            <span class="tag">Metrics</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">DORA‑Gedanken</span>
-          </div>
-          <div style="display:flex; gap:10px; margin-top:auto">
-            <a class="link" href="#" aria-label="Beispielreport">Beispielreport</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" aria-label="Kontakt">
-      <h2 class="section-title">Kontakt</h2>
-      <div class="panel contact-grid">
-        <div>
-          <p>
-            Lust auf Austausch oder Zusammenarbeit? Schreib mir gern.
-          </p>
-          <div class="contact-item" role="listitem">
-            <span>E‑Mail</span>
-            <a class="link" href="mailto:leon@example.com">leon@example.com</a>
-          </div>
-          <div class="contact-item" role="listitem">
-            <span>LinkedIn</span>
-            <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener">Profil öffnen</a>
-          </div>
-          <div class="contact-item" role="listitem">
-            <span>GitHub</span>
-            <a class="link" href="https://github.com/" target="_blank" rel="noopener">Repositorys</a>
-          </div>
-        </div>
-        <aside class="card" aria-label="Schnelle Fakten">
-          <strong>Schnelle Fakten</strong>
-          <ul class="list">
-            <li>Antwortzeit: <strong>&lt; 24h</strong></li>
-            <li>Standort: NRW</li>
-            <li>Verfügbar: Projektbasiert & Festanstellung</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <footer class="container" aria-label="Fußzeile">
-      <div style="display:flex; align-items:center; gap:10px; justify-content:space-between">
-        <span>© <span id="year"></span> Leon Höffges</span>
-        <span style="color:var(--muted)">Erstellt mit HTML & CSS • Gehostet auf GitHub Pages</span>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // Jahr automatisch setzen
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </main>
+  </div>
+  <script src="public/js/scripts.js"></script>
 </body>
+
 </html>
