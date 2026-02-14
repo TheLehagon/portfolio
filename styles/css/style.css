@@ -19,12 +19,31 @@ html { scroll-behavior: smooth; }
     --spc-large: 3.5rem;
 }
 
+body.dark-mode {
+    --accent: #60a5fa;
+    --accent-op: #60a5fa80;
+    --bg: #0f172a;
+    --text: #e2e8f0;
+    --card: #1e293b;
+    --bg-op: #0f172a00;
+}
+
+body.dark-mode .sidebar {
+    background: #1e293b;
+    border-right-color: #334155;
+}
+
+body.dark-mode .logo {
+    background-color: var(--text);
+}
+
 body {
     background: var(--bg);
     color: var(--text);
     font-family: system-ui, sans-serif;
     overflow-x: hidden;
     position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* ---------------------------
@@ -147,6 +166,66 @@ img {
 .nav a:hover {
     opacity: 1;
     color: var(--accent);
+}
+
+/* ---------------------------
+   THEME TOGGLE
+---------------------------- */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text);
+    color: var(--text);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--text);
+    color: var(--bg);
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle.active .theme-icon {
+    transform: rotate(180deg);
+}
+
+.dark-mode-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    background: var(--bg);
+    clip-path: circle(0% at var(--x, 0) var(--y, 0));
+    animation: expandDarkMode 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes expandDarkMode {
+    from {
+        clip-path: circle(0% at var(--x, 0) var(--y, 0));
+    }
+    to {
+        clip-path: circle(150% at var(--x, 0) var(--y, 0));
+    }
 }
 
 /* ---------------------------

@@ -17,6 +17,52 @@ textLoad();
 setInterval(textLoad, 12000);
 
 /* ---------------------------
+   DARK MODE TOGGLE
+---------------------------- */
+(function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (!themeToggle) return;
+
+  // Check localStorage for saved preference
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+    themeToggle.classList.add('active');
+    themeToggle.querySelector('.theme-icon').textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', (e) => {
+    const rect = themeToggle.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    // Create overlay for ripple effect
+    const overlay = document.createElement('div');
+    overlay.className = 'dark-mode-overlay';
+    overlay.style.setProperty('--x', x + 'px');
+    overlay.style.setProperty('--y', y + 'px');
+    document.body.appendChild(overlay);
+
+    // Toggle dark mode after a short delay
+    setTimeout(() => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.classList.toggle('active');
+      
+      const isDark = document.body.classList.contains('dark-mode');
+      themeToggle.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+      
+      // Save preference
+      localStorage.setItem('darkMode', isDark);
+    }, 400);
+
+    // Remove overlay after animation
+    setTimeout(() => {
+      overlay.remove();
+    }, 900);
+  });
+})();
+
+/* ---------------------------
    SCROLL REVEAL ANIMATION
 ---------------------------- */
 const observer = new IntersectionObserver(entries => {
