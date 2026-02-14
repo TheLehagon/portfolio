@@ -186,6 +186,24 @@ section h2 {
     line-height: 1.6;
 }
 
+.chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 1.25rem}
+.chip{border:1px solid var(--border, #ddd);background:var(--chip-bg,#f7f7f7);
+  padding:.45rem .75rem;border-radius:999px;cursor:pointer;transition:all .2s}
+.chip[aria-pressed="true"]{background:var(--accent,#3b82f6);color:#fff;border-color:transparent}
+.chip--reset{margin-left:auto}
+.about-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.about-card{border:1px solid var(--border,#eee);padding:1rem;border-radius:.5rem;
+  background:var(--card,#fff);transition:transform .2s, box-shadow .2s}
+.about-card:focus-within,.about-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+
+
+.about-quiz fieldset{border:1px solid var(--border,#e5e7eb);padding:1rem;border-radius:.5rem;margin:.75rem 0}
+.about-quiz legend{padding:0 .25rem;font-weight:600}
+.about-quiz label{display:block;margin:.35rem 0}
+.hidden{display:none}
+#quiz-result{margin-top:.75rem;font-weight:600}
+
+
 /* ---------------------------
    SKILLS
 ---------------------------- */
@@ -326,6 +344,19 @@ section h2 {
     transform: translateY(-6px);
     background: #ffecec;
 }
+
+
+/* ---------------------------
+   PROJECTS
+---------------------------- */
+.roadmap{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.roadmap-item{border:1px solid var(--border,#e5e7eb);border-radius:.5rem;overflow:hidden;background:var(--card,#fff)}
+.roadmap-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;
+  text-align:left;padding:.85rem 1rem;background:none;border:0;cursor:pointer;font-weight:600}
+.roadmap-toggle:hover{background:rgba(0,0,0,.03)}
+.roadmap-toggle meter{width:140px;height:1rem}
+.roadmap-panel{padding:0 1rem 1rem}
+
 
 /* ---------------------------
    RESPONSIVE

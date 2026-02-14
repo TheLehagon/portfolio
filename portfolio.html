@@ -44,31 +44,115 @@
         <p class="text sec-text">Test Analyst</p>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="about">
-        <h2>Über mich</h2>
-        <p>
-          Ich bin Test Analyst und TYPO3-Integrator aus NRW mit einer großen Leidenschaft für Softwarequalität,
-          effiziente Prozesse und klare Kommunikation. Ich liebe es, mich in technische
-          Systeme zu vertiefen, Fehler zu analysieren und Lösungen zu entwickeln, die
-          Nutzer:innen wirklich weiterhelfen.
-        </p>
-      </section>
+    <!-- === Skills (interaktiv) === -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Meine Skills</h2>
 
-      <!-- SKILLS -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill-list">
-          <div class="skill">Website-Testing</div>
-          <div class="skill">TYPO3 Integration</div>
-          <div class="skill">TYPO3 Editor</div>
-          <div class="skill">CSS / SASS</div>
-          <div class="skill">Jira</div>
-          <div class="skill">Scrum</div>
-          <div class="skill">Azure DevOps</div>
-          <div class="skill">Fluid-Templates</div>
-        </div>
-      </section>
+      <p class="lead">
+        Ich bin Test Analyst und TYPO3-Integrator aus NRW - detailverliebt, nutzerzentriert
+        und mit Spaß an sauberer Qualitätssicherung. 
+      </p>
+
+      <!-- Interessen-Chips -->
+      <div class="chip-row" role="group" aria-label="Interessen filtern">
+        <button class="chip" data-topic="coding" aria-pressed="true">🧩 Coding</button>
+        <button class="chip" data-topic="communication" aria-pressed="false">💬 Kommunikation</button>
+        <button class="chip" data-topic="tech" aria-pressed="false">💻 Technikbegeistert</button>
+        <button class="chip" data-topic="gaming" aria-pressed="false">🎮 Gaming</button>
+        <button class="chip" data-topic="photo" aria-pressed="false">📷 Fotografie</button>
+        <button class="chip chip--reset" data-topic="reset">Alles anzeigen</button>
+      </div>
+
+      <!-- Dynamischer Bereich -->
+      <div class="about-cards" aria-live="polite">
+        <article class="about-card" data-topic="coding">
+          <h3>Sass/Css</h3>
+          <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
+        </article>
+        <article class="about-card" data-topic="coding">
+          <h3>Barrierefreiheit</h3>
+          <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
+        </article>
+        <article class="about-card" data-topic="coding">
+          <h3>TYPO3</h3>
+          <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
+        </article>
+        <article class="about-card" data-topic="communication">
+          <h3>Selbstreflektiert</h3>
+          <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
+        </article>
+        <article class="about-card" data-topic="communication">
+          <h3>Teamarbeit</h3>
+          <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
+        </article>
+        <article class="about-card" data-topic="communication">
+          <h3>Feedback</h3>
+          <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
+        </article>
+        <article class="about-card" data-topic="photo">
+          <h3>Portrait</h3>
+          <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
+        </article>
+        <article class="about-card" data-topic="photo">
+          <h3>Stock</h3>
+          <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
+        </article>
+        <article class="about-card" data-topic="photo">
+          <h3>Landschaft / Natur</h3>
+          <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
+        </article>
+        <article class="about-card" data-topic="tech">
+          <h3>AI</h3>
+          <p>Regelmäßig Kraftsport & Laufen – Struktur, Messbarkeit, nachhaltige Progression.</p>
+        </article>
+        <article class="about-card" data-topic="tech">
+          <h3>PC Bauen</h3>
+          <p>Regelmäßig Kraftsport & Laufen – Struktur, Messbarkeit, nachhaltige Progression.</p>
+        </article>
+        <article class="about-card" data-topic="code">
+          <h3>Side‑Coding</h3>
+          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+        </article>
+        <article class="about-card" data-topic="gaming">
+          <h3>MOBA</h3>
+          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+        </article>
+        <article class="about-card" data-topic="gaming">
+          <h3>Pokemon</h3>
+          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+        </article>
+        <article class="about-card" data-topic="gaming">
+          <h3>Indie-Games</h3>
+          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+        </article>
+      </div>
+    </section>
+
+<section class="about-quiz" aria-labelledby="quiz-title">
+  <h2 id="quiz-title">Kleines Quiz über mich</h2>
+  <form id="quiz-form">
+    <fieldset>
+      <legend>1) Was motiviert mich im Testing am meisten?</legend>
+      <label><input type="radio" name="q1" value="impact"> Nutzer:innen spürbar helfen</label>
+      <label><input type="radio" name="q1" value="bughunt"> Der Nervenkitzel der Bug‑Jagd</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2) Welches Side‑Projekt macht mir Spaß?</legend>
+      <label><input type="radio" name="q2" value="pokedex"> Pokedex/Shinydex</label>
+      <label><input type="radio" name="q2" value="a11y"> Accessibility‑Experimente</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3) Kaffee- oder Teammate‑Typ?</legend>
+      <label><input type="radio" name="q3" value="coffee"> ☕ Kaffee</label>
+      <label><input type="radio" name="q3" value="mate"> 🧉 Mate</label>
+    </fieldset>
+
+    <button class="btn" type="submit">Auswerten</button>
+    <p id="quiz-result" role="status" aria-live="polite" class="hidden"></p>
+  </form>
+</section>
 
       <!-- EXPERIENCE -->
       <section class="experience">

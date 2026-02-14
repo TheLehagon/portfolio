@@ -107,4 +107,79 @@ function initTimeline() {
     window.addEventListener('scroll', updateProgressBar);
 }
 
-document.addEventListener('DOMContentLoaded', initTimeline);
+document.addEventListener('DOMContentLoaded', () => {
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const cards = Array.from(document.querySelectorAll('.about-card'));
+
+    const filterByTopic = (topic) => {
+        if (topic === 'reset') {
+            cards.forEach(c => c.classList.remove('hidden'));
+            return;
+        }
+        cards.forEach(c => {
+            c.classList.toggle('hidden', c.dataset.topic !== topic);
+        });
+    };
+
+    // ensure a single active chip (falls back to first chip)
+    let active = chips.find(c => c.getAttribute('aria-pressed') === 'true') || chips[0];
+    chips.forEach(c => c.setAttribute('aria-pressed', c === active ? 'true' : 'false'));
+
+    // apply initial filter based on active chip
+    filterByTopic(active.dataset.topic);
+
+    // interaction: change active chip and filter cards
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+            chip.setAttribute('aria-pressed', 'true');
+            filterByTopic(chip.dataset.topic);
+        });
+    });
+});
+
+// === Interaktive Chips für "Über mich" ===
+(function(){
+  const chips = document.querySelectorAll('.chip-row .chip');
+  const cards = document.querySelectorAll('.about-card');
+  if(!chips.length || !cards.length) return;
+
+  function update(topic){
+    cards.forEach(c=>{
+      const show = topic==='reset' || c.dataset.topic===topic || topic===null;
+      c.style.display = show ? '' : 'none';
+    });
+  }
+  update(null); // Start: alles anzeigen
+
+  chips.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const topic = btn.dataset.topic;
+      // aria-pressed toggeln
+      chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+      if(topic!=='reset'){ btn.setAttribute('aria-pressed','true'); }
+      update(topic);
+    });
+    // Space/Enter via Button ist nativ handled
+  });
+})();
+
+// === Mini-Quiz ===
+(function(){
+  const form = document.getElementById('quiz-form');
+  if(!form) return;
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const data = new FormData(form);
+    const answered = ['q1','q2','q3'].every(q => data.get(q));
+    const out = document.getElementById('quiz-result');
+    if(!answered){
+      out.textContent = 'Bitte beantworte alle Fragen 😊';
+      out.classList.remove('hidden');
+      return;
+    }
+    out.textContent = 'Nice! Du kennst jetzt meine Vorlieben – hier ein digitaler High‑Five 🙌';
+    out.classList.remove('hidden');
+  });
+})();
+
