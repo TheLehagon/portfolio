@@ -10,7 +10,7 @@ const textLoad = () => {
         text.textContent = "TYPO3-Editor";
     }, 4000);
     setTimeout(() => {
-        text.textContent = "Technikenthusiast";
+        text.textContent = "Technik-Fan";
     }, 8000); //1s = 1000 milliseconds
 }
 textLoad();

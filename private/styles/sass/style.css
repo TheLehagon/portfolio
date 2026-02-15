@@ -126,6 +126,7 @@ section h2 {
   left: 0;
   height: 100%;
   width: 100%;
+  min-width: 100px;
   background: var(--clr-background);
   border-left: 2px solid var(--clr-primary);
   animation: animate 4s steps(12) infinite;
