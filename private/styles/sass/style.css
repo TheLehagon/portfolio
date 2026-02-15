@@ -52,10 +52,6 @@ picture {
   vertical-align: middle;
 }
 
-.hidden {
-  display: none;
-}
-
 body {
   background: var(--clr-background);
   color: var(--clr-text);
@@ -89,6 +85,10 @@ section.visible {
 section h2 {
   font-size: var(--fs-700);
   margin-bottom: var(--spc-4);
+}
+
+.hidden {
+  display: none !important;
 }
 
 .hero {
