@@ -12,16 +12,16 @@
         margin: var(--spc-3) 0 var(--spc-4);
 
         .chip {
-            border: 1px solid var(--border, #ddd);
-            background: var(--chip-bg, #f7f7f7);
+            border: 1px solid var(--border, var(--clr-secondary));
+            background: var(--chip-bg, var(--clr-secondary));
             padding: .45rem .75rem;
             border-radius: 999px;
             cursor: pointer;
             transition: all .2s;
 
             &[aria-pressed="true"] {
-                background: var(--accent, #3b82f6);
-                color: #fff;
+                background: var(--clr-primary);
+                color: var(--clr-background);
                 border-color: transparent;
             }
 
@@ -29,17 +29,18 @@
                 margin-left: auto;
             }
         }
+    }
 
-        .about-cards {
+            .about-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: var(--spc-4);
 
             .about-card {
-                border: 1px solid var(--border, #eee);
+                border: 1px solid var(--border, var(--clr-secondary));
                 padding: 1rem;
                 border-radius: .5rem;
-                background: var(--card, #fff);
+                background: var(--card, var(--clr-background));
                 transition: transform .2s, box-shadow .2s;
 
                 &:focus-within,
@@ -50,12 +51,11 @@
 
             }
         }
-    }
 }
 
 .about-quiz {
     fieldset {
-        border: 1px solid var(--border, #e5e7eb);
+        border: 1px solid var(--border, var(--clr-secondary));
         padding: 1rem;
         border-radius: .5rem;
         margin: .75rem 0;

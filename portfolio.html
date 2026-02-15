@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Leon Höffges</title>
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="private/styles/sass/style.css" />
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 
       <!-- HERO -->
       <section class="hero" id="hero">
-                  <h1 class="text first-text">Hi, ich bin Leon</h1>
+                  <h1 class="text first-text">Hi, ich bin Leon - </h1>
         <p class="text sec-text">Test Analyst</p>
       </section>
 
@@ -133,32 +133,6 @@
       </div>
     </section>
 
-<section class="about-quiz" aria-labelledby="quiz-title">
-  <h2 id="quiz-title">Kleines Quiz über mich</h2>
-  <form id="quiz-form">
-    <fieldset>
-      <legend>1) Was motiviert mich im Testing am meisten?</legend>
-      <label><input type="radio" name="q1" value="impact"> Nutzer:innen spürbar helfen</label>
-      <label><input type="radio" name="q1" value="bughunt"> Der Nervenkitzel der Bug‑Jagd</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>2) Welches Side‑Projekt macht mir Spaß?</legend>
-      <label><input type="radio" name="q2" value="pokedex"> Pokedex/Shinydex</label>
-      <label><input type="radio" name="q2" value="a11y"> Accessibility‑Experimente</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>3) Kaffee- oder Teammate‑Typ?</legend>
-      <label><input type="radio" name="q3" value="coffee"> ☕ Kaffee</label>
-      <label><input type="radio" name="q3" value="mate"> 🧉 Mate</label>
-    </fieldset>
-
-    <button class="btn" type="submit">Auswerten</button>
-    <p id="quiz-result" role="status" aria-live="polite" class="hidden"></p>
-  </form>
-</section>
-
       <!-- EXPERIENCE -->
       <section class="experience">
         <h2>Berufserfahrung</h2>
@@ -194,6 +168,41 @@
           </div>
         </div>
       </section>
+
+          <section class="about-quiz" aria-labelledby="quiz-title">
+  <h2 id="quiz-title">Kleines Quiz über mich</h2>
+  <p>Teste dein Wissen über mich mit diesem kurzen Quiz! Es gibt keine falschen Antworten, nur interessante Einblicke in meine Persönlichkeit und meine Interessen. Viel Spaß beim Rätseln! Vielleicht schaltet sich ein kleiner Bonus frei, wenn du alle Fragen richtig beantwortest.</p>
+  <form id="quiz-form">
+    <fieldset>
+      <legend>1) Was motiviert mich im Testing am meisten?</legend>
+      <label><input type="radio" name="q1" value="impact"> Nutzer:innen spürbar helfen</label>
+      <label><input type="radio" name="q1" value="bughunt"> Der Nervenkitzel der Bug-Jagd</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2) Welches Side-Projekt macht mir Spaß?</legend>
+      <label><input type="radio" name="q2" value="pokedex"> Pokedex/Shinydex</label>
+      <label><input type="radio" name="q2" value="a11y"> Accessibility-Experimente</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3) Mein Lieblingsgetränk?</legend>
+      <label><input type="radio" name="q3" value="cola"> Cola</label>
+      <label><input type="radio" name="q3" value="kakao"> Kakao</label>
+    </fieldset>
+
+        <fieldset>
+      <legend>3) Wo bin ich am liebsten in meiner Freizeit?</legend>
+      <label><input type="radio" name="q3" value="borussia"> Borussia-Park</label>
+      <label><input type="radio" name="q3" value="nature"> Natur</label>
+      <label><input type="radio" name="q3" value="lol"> Summoners Rift</label>
+    </fieldset>
+
+    <button class="btn" type="submit">Auswerten</button>
+    <p id="quiz-result" role="status" aria-live="polite" class="hidden"></p>
+  </form>
+</section>
+
 
     </main>
   </div>
