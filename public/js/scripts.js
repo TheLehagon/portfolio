@@ -63,6 +63,92 @@ setInterval(textLoad, 12000);
 })();
 
 /* ---------------------------
+   MOBILE NAV TOGGLE
+---------------------------- */
+(function(){
+  const toggle = document.getElementById('nav-toggle');
+  const sidebar = document.getElementById('sidebar');
+  if(!toggle || !sidebar) return;
+
+  // create backdrop if missing
+  let backdrop = document.getElementById('nav-backdrop');
+  if(!backdrop){
+    backdrop = document.createElement('div');
+    backdrop.id = 'nav-backdrop';
+    backdrop.className = 'nav-backdrop';
+    // insert after sidebar so it sits under sidebar in stacking
+    sidebar.parentNode.insertBefore(backdrop, sidebar.nextSibling);
+  }
+
+  let previouslyFocused = null;
+  let keydownHandler = null;
+
+  function getFocusable(container){
+    return Array.from(container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+      .filter(el => el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+  }
+
+  function openNav(){
+    previouslyFocused = document.activeElement;
+    sidebar.classList.add('open');
+    backdrop.classList.add('visible');
+    toggle.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+
+    // hide main content from assistive tech
+    const main = document.querySelector('.content');
+    if(main) main.setAttribute('aria-hidden','true');
+
+    // focus trap
+    const focusable = getFocusable(sidebar);
+    if(focusable.length) focusable[0].focus();
+
+    keydownHandler = function(e){
+      if(e.key === 'Escape') { closeNav(); return; }
+      if(e.key !== 'Tab') return;
+      const nodes = getFocusable(sidebar);
+      if(!nodes.length) { e.preventDefault(); return; }
+      const first = nodes[0];
+      const last = nodes[nodes.length -1];
+      if(e.shiftKey){
+        if(document.activeElement === first){ e.preventDefault(); last.focus(); }
+      } else {
+        if(document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    };
+
+    document.addEventListener('keydown', keydownHandler);
+  }
+
+  function closeNav(){
+    sidebar.classList.remove('open');
+    backdrop.classList.remove('visible');
+    toggle.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+
+    const main = document.querySelector('.content');
+    if(main) main.removeAttribute('aria-hidden');
+
+    if(keydownHandler) document.removeEventListener('keydown', keydownHandler);
+    keydownHandler = null;
+    if(previouslyFocused && previouslyFocused.focus) previouslyFocused.focus();
+    previouslyFocused = null;
+  }
+
+  toggle.addEventListener('click', ()=>{
+    const open = sidebar.classList.contains('open');
+    if(open) closeNav(); else openNav();
+  });
+
+  backdrop.addEventListener('click', closeNav);
+
+  // close on Escape
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && sidebar.classList.contains('open')) closeNav();
+  });
+})();
+
+/* ---------------------------
    SCROLL REVEAL ANIMATION
 ---------------------------- */
 const observer = new IntersectionObserver(entries => {

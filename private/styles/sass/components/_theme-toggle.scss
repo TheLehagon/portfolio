@@ -55,6 +55,9 @@ body.dark-mode .sidebar {
 }
 
 body.dark-mode .logo {
-    background-color: var(--text);
+    background-color: var(--clr-text);
 }
 
+body.dark-mode .chip {
+    color: var(--clr-text);
+}

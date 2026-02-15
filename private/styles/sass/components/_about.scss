@@ -28,6 +28,10 @@
             &--reset {
                 margin-left: auto;
             }
+
+            &:hover {
+                background: var(--clr-primaryop);
+            }
         }
     }
 
