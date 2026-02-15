@@ -40,7 +40,7 @@
                 border: 1px solid var(--border, var(--clr-secondary));
                 padding: 1rem;
                 border-radius: .5rem;
-                background: var(--card, var(--clr-background));
+                background: var(--card, var(--clr-secondary));
                 transition: transform .2s, box-shadow .2s;
 
                 &:focus-within,

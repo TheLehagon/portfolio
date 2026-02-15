@@ -19,3 +19,14 @@
     --spc-#{$key}: #{$value};
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Emit CSS variables for dark mode using the $colors-dark map
+body.dark-mode {
+  @each $key, $value in $colors-dark {
+    --clr-#{$key}: #{$value};
+  }
+}

@@ -167,7 +167,9 @@ document.addEventListener('DOMContentLoaded', initTimeline);
       c.style.display = show ? '' : 'none';
     });
   }
-  update(null); // Start: alles anzeigen
+  // Start: Zeige standardmäßig nur 'coding'
+  chips.forEach(c => c.setAttribute('aria-pressed', c.dataset.topic === 'coding' ? 'true' : 'false'));
+  update('coding');
 
   chips.forEach(btn=>{
     btn.addEventListener('click', ()=>{

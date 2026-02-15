@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Leon Höffges</title>
+  <title>Portfolio - Leon Höffges</title>
   <link rel="stylesheet" href="private/styles/sass/style.css" />
 </head>
 
@@ -16,27 +16,40 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-        <button id="theme-toggle" class="theme-toggle hidden" aria-label="Toggle Dark Mode" title="Dark Mode">
-          <span class="theme-icon">🌙</span>
-        </button>
+      <button id="theme-toggle" class="theme-toggle hidden" aria-label="Toggle Dark Mode" title="Dark Mode">
+        <span class="theme-icon">🌙</span>
+      </button>
       <div class="group">
-        <div class="logo"></div>
-      <div class="nav">
-        <a href="#hero">Home</a>
-        <a href="#about">Über mich</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Erfahrung</a>
-        <a href="#projects">Projekte</a>
+        <div class="profile">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="profile-info">
+            <p class="name">Leon Höffges</p>
+            <p class="location">📌 Geldern</p>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#hero">Home</a>
+          <a href="#about">Über mich</a>
+          <a href="#experience">Erfahrung</a>
+          <a href="#projects">Projekte</a>
+          <a href="#quiz">Quiz</a>
+        </nav>
+
+        <a href="mailto:leon.hoeffges@gmail.com" class="btn">Let's Connect!</a>
+
       </div>
-      <p>Leon Höffges</p>
-      <p>📌 Geldern</p>
-      <a href="mailto:leon.hoeffges@gmail.com" class="btn">Let's Connect!</a>
-      </div>
-      <div class="gropup">
-      <h3>Find mich auch hier:</h3>
-      <a href="http://linkedin.com/in/leon-hoeffges" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
-      <a href="http://github.com/leon-hoeffges" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
-      <a href="https://www.instagram.com/thelehagon" target="_blank" rel="noopener noreferrer" class="btn">Instagram</a>
+
+      <div class="group social">
+        <h3>Find mich auch hier:</h3>
+        <div class="social-links">
+          <a href="http://linkedin.com/in/leon-hoeffges" target="_blank" rel="noopener noreferrer" class="icon-btn">🔗
+            LinkedIn</a>
+          <a href="http://github.com/leon-hoeffges" target="_blank" rel="noopener noreferrer" class="icon-btn">🐙
+            GitHub</a>
+          <a href="https://www.instagram.com/thelehagon" target="_blank" rel="noopener noreferrer" class="icon-btn">📷
+            Instagram</a>
+        </div>
       </div>
     </aside>
 
@@ -45,163 +58,220 @@
 
       <!-- HERO -->
       <section class="hero" id="hero">
-                  <h1 class="text first-text">Hi, ich bin Leon - </h1>
+        <h1 class="text first-text">Hi, ich bin Leon - </h1>
         <p class="text sec-text">Test Analyst</p>
       </section>
 
-    <!-- === Skills (interaktiv) === -->
-    <section id="about" class="about" aria-labelledby="about-title">
-      <h2 id="about-title">Meine Skills</h2>
+      <!-- === Skills (interaktiv) === -->
+      <section id="about" class="about" aria-labelledby="about-title">
+        <h2 id="about-title">Meine Skills</h2>
 
-      <p class="lead">
-        Ich bin Test Analyst und TYPO3-Integrator aus NRW - detailverliebt, nutzerzentriert
-        und mit Spaß an sauberer Qualitätssicherung. 
-      </p>
+        <p class="lead">
+          Ich bin Test Analyst und TYPO3-Integrator aus NRW - detailverliebt, nutzerzentriert
+          und mit Spaß an sauberer Qualitätssicherung.
+        </p>
 
-      <!-- Interessen-Chips -->
-      <div class="chip-row" role="group" aria-label="Interessen filtern">
-        <button class="chip" data-topic="coding" aria-pressed="true">🧩 Coding</button>
-        <button class="chip" data-topic="communication" aria-pressed="false">💬 Kommunikation</button>
-        <button class="chip" data-topic="tech" aria-pressed="false">💻 Technikbegeistert</button>
-        <button class="chip" data-topic="gaming" aria-pressed="false">🎮 Gaming</button>
-        <button class="chip" data-topic="photo" aria-pressed="false">📷 Fotografie</button>
-        <button class="chip chip--reset" data-topic="reset">Alles anzeigen</button>
-      </div>
+        <!-- Interessen-Chips -->
+        <div class="chip-row" role="group" aria-label="Interessen filtern">
+          <button class="chip" data-topic="coding" aria-pressed="">🧩 Coding</button>
+          <button class="chip" data-topic="communication" aria-pressed="false">💬 Kommunikation</button>
+          <button class="chip" data-topic="tech" aria-pressed="false">💻 Technikbegeistert</button>
+          <button class="chip" data-topic="gaming" aria-pressed="false">🎮 Gaming</button>
+          <button class="chip" data-topic="photo" aria-pressed="false">📷 Fotografie</button>
+          <button class="chip chip--reset" data-topic="reset">Alles anzeigen</button>
+        </div>
 
-      <!-- Dynamischer Bereich -->
-      <div class="about-cards" aria-live="polite">
-        <article class="about-card" data-topic="coding">
-          <h3>Sass/Css</h3>
-          <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
-        </article>
-        <article class="about-card" data-topic="coding">
-          <h3>Barrierefreiheit</h3>
-          <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
-        </article>
-        <article class="about-card" data-topic="coding">
-          <h3>TYPO3</h3>
-          <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
-        </article>
-        <article class="about-card" data-topic="communication">
-          <h3>Selbstreflektiert</h3>
-          <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
-        </article>
-        <article class="about-card" data-topic="communication">
-          <h3>Teamarbeit</h3>
-          <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
-        </article>
-        <article class="about-card" data-topic="communication">
-          <h3>Feedback</h3>
-          <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
-        </article>
-        <article class="about-card" data-topic="photo">
-          <h3>Portrait</h3>
-          <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
-        </article>
-        <article class="about-card" data-topic="photo">
-          <h3>Stock</h3>
-          <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
-        </article>
-        <article class="about-card" data-topic="photo">
-          <h3>Landschaft / Natur</h3>
-          <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
-        </article>
-        <article class="about-card" data-topic="tech">
-          <h3>AI</h3>
-          <p>Regelmäßig Kraftsport & Laufen – Struktur, Messbarkeit, nachhaltige Progression.</p>
-        </article>
-        <article class="about-card" data-topic="tech">
-          <h3>PC Bauen</h3>
-          <p>Regelmäßig Kraftsport & Laufen – Struktur, Messbarkeit, nachhaltige Progression.</p>
-        </article>
-        <article class="about-card" data-topic="code">
-          <h3>Side‑Coding</h3>
-          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
-        </article>
-        <article class="about-card" data-topic="gaming">
-          <h3>MOBA</h3>
-          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
-        </article>
-        <article class="about-card" data-topic="gaming">
-          <h3>Pokemon</h3>
-          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
-        </article>
-        <article class="about-card" data-topic="gaming">
-          <h3>Indie-Games</h3>
-          <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
-        </article>
-      </div>
-    </section>
+        <!-- Dynamischer Bereich -->
+        <div class="about-cards" aria-live="polite">
+          <article class="about-card" data-topic="coding">
+            <h3>Sass/Css</h3>
+            <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
+          </article>
+          <article class="about-card" data-topic="coding">
+            <h3>Barrierefreiheit</h3>
+            <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
+          </article>
+          <article class="about-card" data-topic="coding">
+            <h3>TYPO3</h3>
+            <p>Ich produziere gerne Beats und entdecke neue Artists – ideal zum Flow beim Testen.</p>
+          </article>
+          <article class="about-card" data-topic="communication">
+            <h3>Selbstreflektiert</h3>
+            <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
+          </article>
+          <article class="about-card" data-topic="communication">
+            <h3>Teamarbeit</h3>
+            <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
+          </article>
+          <article class="about-card" data-topic="communication">
+            <h3>Feedback</h3>
+            <p>RPGs & Indie‑Titel schärfen meinen Blick für Storytelling, UX‑Loops und Balancing.</p>
+          </article>
+          <article class="about-card" data-topic="photo">
+            <h3>Portrait</h3>
+            <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
+          </article>
+          <article class="about-card" data-topic="photo">
+            <h3>Stock</h3>
+            <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
+          </article>
+          <article class="about-card" data-topic="photo">
+            <h3>Landschaft / Natur</h3>
+            <p>Komposition & Licht helfen mir, Interfaces klarer zu sehen – und Bugs schneller zu spotten.</p>
+          </article>
+          <article class="about-card" data-topic="tech">
+            <h3>AI</h3>
+            <p>Regelmäßig Kraftsport & Laufen – Struktur, Messbarkeit, nachhaltige Progression.</p>
+          </article>
+          <article class="about-card" data-topic="tech">
+            <h3>PC Bauen</h3>
+            <p>Regelmäßig Kraftsport & Laufen – Struktur, Messbarkeit, nachhaltige Progression.</p>
+          </article>
+          <article class="about-card" data-topic="code">
+            <h3>Side‑Coding</h3>
+            <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+          </article>
+          <article class="about-card" data-topic="gaming">
+            <h3>MOBA</h3>
+            <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+          </article>
+          <article class="about-card" data-topic="gaming">
+            <h3>Pokemon</h3>
+            <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+          </article>
+          <article class="about-card" data-topic="gaming">
+            <h3>Indie-Games</h3>
+            <p>Kleine Tools & Automationen, um Tests und Workflows smarter zu machen.</p>
+          </article>
+        </div>
+      </section>
 
       <!-- EXPERIENCE -->
-      <section class="experience">
+      <section id="experience" class="experience">
         <h2>Berufserfahrung</h2>
-            <div class="timeline">
-        <div class="timeline-events" id="timeline-events">
+        <div class="timeline">
+          <div class="timeline-events" id="timeline-events">
             <!-- Timeline events will be dynamically added here -->
+          </div>
+          <div class="scroll-progress" id="scroll-progress"></div>
         </div>
-        <div class="scroll-progress" id="scroll-progress"></div>
-    </div>
       </section>
 
       <!-- PROJECTS -->
       <section id="projects">
         <h2>Aktuelle Projekte</h2>
         <div class="projects-grid">
-          <div class="project">
-            <h3>Portfolio Erweiterung</h3>
-            <p>Entwicklung und Überarbetung meines Portfolios.</p>
-            <ul>
-              <li>Umstellung auf vue.js</li>
-              <li>sass integration</li>
-              <li>🌒 dark mode</li>
-              <li>Barrierefreiheit</li>
-            </ul>
-          </div>
-          <div class="project">
-            <h3>Pokedex/Shinydex mit Pokeapi</h3>
-            <p>Erstellen einer eigenen Pokedex-Lösung mit Pokeapi.</p>
-          </div>
-          <div class="project">
-            <h3>Vue.js startup</h3>
-            <p>Einarbeitung in Vue.js mit node & vite.</p>
-          </div>
+          <article class="project">
+            <div class="project-media" aria-hidden="true"></div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>Portfolio Erweiterung</h3>
+                <span class="badge">In Arbeit</span>
+              </div>
+              <p class="project-lead">Komplette Überarbeitung des Portfolios mit moderner Architektur, besserer
+                Barrierefreiheit und Dark-Mode.</p>
+              <p>Highlights:</p>
+              <ul class="project-features">
+                <li>Umstellung auf Vue.js + Vite</li>
+                <li>Sass-Refactor & CSS-Variablen</li>
+                <li>Barrierefreiheit (a11y) Fokus</li>
+                <li>Progressive Enhancement & Offline</li>
+              </ul>
+              <div class="project-meta">
+                <div class="tech">Tech: Vue • Sass • Vite</div>
+                <div class="actions">
+                  <a class="btn small" href="#">Demo</a>
+                  <a class="btn small ghost" href="#">Repo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media pokedex" aria-hidden="true"></div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>Pokedex / Shinydex</h3>
+                <span class="badge">Live</span>
+              </div>
+              <p class="project-lead">Ein kleines SPA, das die PokeAPI nutzt — Filter, shiny‑Toggle und
+                Favoritenfunktion.</p>
+              <p>Highlights:</p>
+              <ul class="project-features">
+                <li>REST-API Konsum</li>
+                <li>Responsive Grid & Lazy Images</li>
+                <li>Favoriten persistent via LocalStorage</li>
+              </ul>
+              <div class="project-meta">
+                <div class="tech">Tech: Vanilla JS • PokeAPI • CSS Grid</div>
+                <div class="actions">
+                  <a class="btn small" href="#">Demo</a>
+                  <a class="btn small ghost" href="#">Repo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media vue" aria-hidden="true"></div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3>Vue.js Startup</h3>
+                <span class="badge">Proto</span>
+              </div>
+              <p class="project-lead">Experimentelles Boilerplate mit Tests, Storybook und einfachen CI-Checks.</p>
+              <ul class="project-features">
+                <li>Setup mit Vite + Vitest</li>
+                <li>Component-driven development</li>
+              </ul>
+              <div class="project-meta">
+                <div class="tech">Tech: Vue • Vite • Vitest</div>
+                <div class="actions">
+                  <a class="btn small" href="#">Docs</a>
+                  <a class="btn small ghost" href="#">Repo</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
 
-          <section class="about-quiz" aria-labelledby="quiz-title">
-  <h2 id="quiz-title">Kleines Quiz über mich</h2>
-  <p>Teste dein Wissen über mich mit diesem kurzen Quiz! Es gibt keine falschen Antworten, nur interessante Einblicke in meine Persönlichkeit und meine Interessen. Viel Spaß beim Rätseln! Vielleicht schaltet sich ein kleiner Bonus frei, wenn du alle Fragen richtig beantwortest.</p>
-  <form id="quiz-form">
-    <fieldset>
-      <legend>1) Was motiviert mich im Testing am meisten?</legend>
-      <label><input type="radio" name="q1" value="impact"> Nutzer:innen spürbar helfen</label>
-      <label><input type="radio" name="q1" value="bughunt"> Der Nervenkitzel der Bug-Jagd</label>
-    </fieldset>
+      <section class="about-quiz" id="quiz" aria-labelledby="quiz-title">
+        <h2 id="quiz-title">Kleines Quiz über mich</h2>
+        <p>Teste dein Wissen über mich mit diesem kurzen Quiz! Es gibt keine falschen Antworten, nur interessante
+          Einblicke in meine Persönlichkeit und meine Interessen. Viel Spaß beim Rätseln! Vielleicht schaltet sich ein
+          kleiner Bonus frei, wenn du alle Fragen richtig beantwortest.</p>
+        <form id="quiz-form">
+          <fieldset>
+            <legend>1) Was motiviert mich im Testing am meisten?</legend>
+            <label><input type="radio" name="q1" value="impact"> Nutzer:innen spürbar helfen</label>
+            <label><input type="radio" name="q1" value="bughunt"> Der Nervenkitzel der Bug-Jagd</label>
+          </fieldset>
 
-    <fieldset>
-      <legend>2) Welches Side-Projekt macht mir Spaß?</legend>
-      <label><input type="radio" name="q2" value="pokedex"> Pokedex/Shinydex</label>
-      <label><input type="radio" name="q2" value="a11y"> Accessibility-Experimente</label>
-    </fieldset>
+          <fieldset>
+            <legend>2) Welches Side-Projekt macht mir Spaß?</legend>
+            <label><input type="radio" name="q2" value="pokedex"> Pokedex/Shinydex</label>
+            <label><input type="radio" name="q2" value="a11y"> Accessibility-Experimente</label>
+          </fieldset>
 
-    <fieldset>
-      <legend>3) Mein Lieblingsgetränk?</legend>
-      <label><input type="radio" name="q3" value="cola"> Cola</label>
-      <label><input type="radio" name="q3" value="kakao"> Kakao</label>
-    </fieldset>
+          <fieldset>
+            <legend>3) Mein Lieblingsgetränk?</legend>
+            <label><input type="radio" name="q3" value="cola"> Cola</label>
+            <label><input type="radio" name="q3" value="kakao"> Kakao</label>
+          </fieldset>
 
-        <fieldset>
-      <legend>3) Wo bin ich am liebsten in meiner Freizeit?</legend>
-      <label><input type="radio" name="q4" value="borussia"> Borussia-Park</label>
-      <label><input type="radio" name="q4" value="nature"> Natur</label>
-      <label><input type="radio" name="q4" value="lol"> Summoners Rift</label>
-    </fieldset>
+          <fieldset>
+            <legend>4) Wo bin ich am liebsten in meiner Freizeit?</legend>
+            <label><input type="radio" name="q4" value="borussia"> Borussia-Park</label>
+            <label><input type="radio" name="q4" value="nature"> Natur</label>
+            <label><input type="radio" name="q4" value="lol"> Summoners Rift</label>
+          </fieldset>
 
-    <button class="btn submit" type="submit">Auswerten</button>
-    <p id="quiz-result" role="status" aria-live="polite" class="hidden"></p>
-  </form>
-</section>
+          <button class="btn submit" type="submit">Auswerten</button>
+          <p id="quiz-result" role="status" aria-live="polite" class="hidden"></p>
+        </form>
+      </section>
 
 
     </main>

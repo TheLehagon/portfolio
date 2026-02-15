@@ -42,8 +42,8 @@ $spacing: (
   "7": 4rem,
 );
 
-body.dark-mode {
-$colors: (
+// Dark mode color map — used to emit CSS variables under `body.dark-mode`
+$colors-dark: (
   "text": #e2e8f0,
   "background": #0f172a,
   "backgroundop": #0f172a00,
@@ -52,5 +52,3 @@ $colors: (
   "secondary": #1e293b,
   "accent": #60a5fa,
 );
-
-};
