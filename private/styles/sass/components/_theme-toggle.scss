@@ -61,3 +61,8 @@ body.dark-mode .logo {
 body.dark-mode .chip {
     color: var(--clr-text);
 }
+
+body.dark-mode .btn {
+    background-color: var(--clr-primary);
+    color: #1e293b;
+}

@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', initTimeline);
       out.classList.remove('hidden');
       return;
     }
-    out.textContent = 'Nice! Du kennst jetzt meine Vorlieben – hier ein digitaler High‑Five 🙌';
+    out.textContent = 'Nice! Du kennst jetzt meine Vorlieben - hier ein digitaler High-Five 🙌';
     out.classList.remove('hidden');
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (themeToggleBtn) themeToggleBtn.classList.remove('hidden');

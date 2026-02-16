@@ -40,6 +40,8 @@ $spacing: (
   "5": 2rem,
   "6": 3rem,
   "7": 4rem,
+  "8": 5rem,
+  "9": 6rem,
 );
 
 // Dark mode color map — used to emit CSS variables under `body.dark-mode`
@@ -47,8 +49,8 @@ $colors-dark: (
   "text": #e2e8f0,
   "background": #0f172a,
   "backgroundop": #0f172a00,
-  "primary": #60a5fa,
-  "primaryop": #60a5fa80,
+  "primary": #70A9FF,
+  "primaryop": #70A9FF80,
   "secondary": #1e293b,
   "accent": #60a5fa,
 );
